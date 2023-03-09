@@ -12,3 +12,7 @@
 2. 后端接收后，调用generateEl()方法就可以解析出EL表达式
 
 后端代码地址：https://gitee.com/dravin/liteflow-vue-api
+
+
+
+![skimg](doc/sk.jpg)
