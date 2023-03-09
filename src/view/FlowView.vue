@@ -34,6 +34,7 @@ import { Group } from '@logicflow/extension';
 import CommonNode from "../component/logicNode/CommonNode"
 import LockedNode from "../component/logicNode/LockedNode"
 import SwitchNode from "../component/logicNode/SwitchNode"
+import IfNode from "../component/logicNode/IfNode"
 import WhenGroupNode from "../component/logicNode/WhenGroupNode"
 
 LogicFlow.use(Control);
@@ -64,7 +65,12 @@ const patternItems = [
         label: '选择组件',
         icon: 'data:image/png;base64,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',
     },
-    
+    {
+        type: 'IfNode',
+        text: '判断',
+        label: '判断组件',
+        icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAAXNSR0IArs4c6QAABeNJREFUWEfNWH+IFHUU/7zZ0grCdu4iFD3Km9mL7J/8QWQX9IvSLIukMisyNc6d8YIif0RFRkZmUpDu7B1l2Q9NsyKy8gf9pDMJT4PQ6Hb2TDSM4Pa7WZB4uvNiZnb2ZuZmd+fOf+7BwN5837z3+b7f7wgjlGiE4sJZAbtonXm9lIBCzCqTpAAWM0m/SeAeJuwXi9Vfh3vxIQOTM/kZAN8Mwr0AJtRRfIgI29mi74Wu7BwKyNjAktn8tcRoB/i+gAJCPxh/OY9NhEuchzEqCIS2MmFdMa3siQMwFjA5Y74KwuM+gTvB9LXE/E3fEvVAlKLG9eZki+hGEN8EYEaFh/Ga0NUn6oGrC0zOmj+CcY0riHtAtEak1bfqCfafy1lzAZiXAdRStupekVan15JRE5hsmOz7eNvphKX929bSNxRQHu+FnT2N55YkA8A93juhqVX1Vz1oMMxNDMxzwoaxqaCrD0a6zMhPKYGmEfHVjk2ZfkqA9/Vpyv4o/oaM+T4THnDDEZsLmur8DlMksGQ2t4qYnna9Zz0v9JaVUR8njdzrBGqPOmPwuqKWeizqTM70rARJzzniiV8splPP1AXmZh93uTfijoKWSkcKN3KvAPRk+Ww32/HnfOPE0S3lmFwrtNTSSMsZuSyDFrvgqDWcrYMsJhv5LW5J4J7TCW6Niqlkpvd+ImtzNYsGLMLSvKLe/EEYXGPnkbFW6XQ3gHEAbRWaMtfPEwCWXN9zG0nSFw4DYWG17JMN80M7iAn4eXTiROvxtqn/+YWO6+y+4FRpTBcDVwHYJjTVLsaDKHABy5pVXNLypccUACZn8h0gbgOwS2jqQO0JiZQz5jEQxoPxltDVhdFKzQ0gLADjD6GrkR3CtVr/QYBkMHUKXXFc69rFR3I2fxzMY2sFvM3uAasV4JXEqAHMllXJUqI/RVoZNwhYuSF/6xxImC4Wq3ujLOEAK7sSwG6hqbdGWswwd5WToKor7e+S2d7bia3t9m+rhBv+ble/C1hMNsxFAN4AoV+k1dHVQLkWG0j3qFh0Kz02ODJqlBtPh5w1T9m9lZjnFPTUJwFgDZncy0y0DMAxoalNtYCVrXYQwCRPOeOccrk40+LVKACHhKZeGUPW0fKk8qjQ1DdDFst/DPDdYHQLXZ1WT1jIpVHsNV0YiO2MuQ+EqUy0vJhW1oSA5T4CaM5QgDnBmzUfYsYdlUZP2GvPYIW0+l6cy5WTyQXGvLyop4LAktn8KmK221AsV8ZVGodPNkzXlb7aWSkX5Zu/Gyf44ygbCo8X/BJwZ5+mfhZ0ZYd5BSwccqqFhSnVBkC/wmRn7xj0owmJUpMEaaKT8rAOo5Q4ilE4WmxrPlEPYKhMTfL2hGCBNUw305iWCl1ZW01o0sjNkkDzvLGoGp891ljgzUUt5ba5CEpmzAwRtHAGB4A1ZM2XmLECwE6hqTPDchoyuflMWAhQa+jsJECm+45VAOcHz7mLGBsKempjyOJNOGN1E+FiIqwupNWnvPNwr5wB4h2ufF4q9FTFanI2/zaY5w8I5h/A9I5Eia4+baJTwzxqNA63WFxqBfHDAF1XOSDaKNLKI97fcibXASK7N9uzz0z/JlVj7MHJM6POG//PoglCNkwbrNPUmXBAYnqhoCmf1osf+7zByN9lET9LjMllfscbsi+m64499of+QRHgr8C8x1fJI10cB6D/cnabAkn2Rd1xPM6gaDNGrGtAyA1xwIR5BoeDjSp6nau6jATXNjoiNOWy4YAZBM7I/w7wpc57QtU1Lv76RtjF7CwYVVO/FnC7xBBROxiVMWlY65unxL/GuZdE1kpIq4ttzXYbqUvJzt4mqWStYKCy1NRa2zyBdTdxNyF865yb24KYdliStKWYbv48Cp09AEqWNZeJZzqjc5mqrWthGbGADWTrCPuniv82ziZFidmQMNvZD2oQA3nALtjSjqKmuIU7JsW2WJQ8uwEnJJaZyHlgWSCJ+iRGXwmlI0Xt8l9i4hjEdlbAhqs0zncjFtj/TvCsRdmJzTwAAAAASUVORK5CYII=',
+    },
     {
         type: 'WhenGroupNode',
         text: '',
@@ -79,9 +85,7 @@ const data = reactive<any>({});
 data.value={"nodes":[{"id":"37068e44-b7f8-4d43-a379-b294842cc35f","type":"CommonNode","x":360,"y":260,"properties":{"nodeType":"COMMON","nodeId":"id1"},"text":{"x":360,"y":260,"value":"id1"}},{"id":"248a88cf-445d-4938-b6e6-2fa42975e572","type":"CommonNode","x":600,"y":140,"properties":{"nodeType":"COMMON","nodeId":"id2"},"text":{"x":600,"y":140,"value":"id2"}},{"id":"8fe456c3-34dd-46f3-bd07-2f733d1e5c37","type":"CommonNode","x":660,"y":320,"properties":{"nodeType":"COMMON","nodeId":"id3"},"text":{"x":660,"y":320,"value":"id3"}},{"id":"1eda6434-fa6d-40dc-a725-57d44bdadea8","type":"CommonNode","x":1140,"y":160,"properties":{"nodeType":"COMMON","nodeId":"id4"},"text":{"x":1140,"y":160,"value":"id4"}},{"id":"0e5feb52-da0d-4121-a3fd-4ef72281280c","type":"CommonNode","x":900,"y":380,"properties":{"nodeType":"COMMON","nodeId":"id5"},"text":{"x":900,"y":380,"value":"id5"}},{"id":"bcc07763-9d31-4c8e-a260-cdb443667215","type":"CommonNode","x":900,"y":260,"properties":{"nodeType":"COMMON","nodeId":"id6"},"text":{"x":900,"y":260,"value":"id6"}},{"id":"80128100-68af-43a7-8815-a9b5b75814df","type":"WhenGroupNode","x":760,"y":300,"properties":{"nodeSize":{"width":544,"height":420},"nodeType":"WHEN"},"children":["248a88cf-445d-4938-b6e6-2fa42975e572","8fe456c3-34dd-46f3-bd07-2f733d1e5c37","846b5512-3861-4a9d-811d-4ab456d0abc5"]},{"id":"846b5512-3861-4a9d-811d-4ab456d0abc5","type":"WhenGroupNode","x":900,"y":340,"properties":{"nodeSize":{"width":214,"height":257},"nodeType":"WHEN"},"children":["0e5feb52-da0d-4121-a3fd-4ef72281280c","bcc07763-9d31-4c8e-a260-cdb443667215"]}],"edges":[{"id":"2b4b05d6-0836-4275-b99a-276d54a71dfa","type":"polyline","sourceNodeId":"37068e44-b7f8-4d43-a379-b294842cc35f","targetNodeId":"248a88cf-445d-4938-b6e6-2fa42975e572","startPoint":{"x":420,"y":260},"endPoint":{"x":540,"y":140},"properties":{},"pointsList":[{"x":420,"y":260},{"x":510,"y":260},{"x":510,"y":140},{"x":540,"y":140}]},{"id":"5bfc56ee-0f9e-4867-8f23-466052667a84","type":"polyline","sourceNodeId":"37068e44-b7f8-4d43-a379-b294842cc35f","targetNodeId":"8fe456c3-34dd-46f3-bd07-2f733d1e5c37","startPoint":{"x":420,"y":260},"endPoint":{"x":600,"y":320},"properties":{},"pointsList":[{"x":420,"y":260},{"x":510,"y":260},{"x":510,"y":320},{"x":600,"y":320}]},{"id":"fcc45eb3-ae34-4ce8-aed1-d5aab974292e","type":"polyline","sourceNodeId":"248a88cf-445d-4938-b6e6-2fa42975e572","targetNodeId":"1eda6434-fa6d-40dc-a725-57d44bdadea8","startPoint":{"x":660,"y":140},"endPoint":{"x":1080,"y":160},"properties":{},"pointsList":[{"x":660,"y":140},{"x":870,"y":140},{"x":870,"y":160},{"x":1080,"y":160}]},{"id":"162a655f-5137-458a-b4c7-6aeeb046c78d","type":"polyline","sourceNodeId":"8fe456c3-34dd-46f3-bd07-2f733d1e5c37","targetNodeId":"0e5feb52-da0d-4121-a3fd-4ef72281280c","startPoint":{"x":720,"y":320},"endPoint":{"x":840,"y":380},"properties":{},"pointsList":[{"x":720,"y":320},{"x":780,"y":320},{"x":780,"y":380},{"x":840,"y":380}]},{"id":"070868b0-8fb5-46ff-9f95-bdf132f420a4","type":"polyline","sourceNodeId":"8fe456c3-34dd-46f3-bd07-2f733d1e5c37","targetNodeId":"bcc07763-9d31-4c8e-a260-cdb443667215","startPoint":{"x":720,"y":320},"endPoint":{"x":840,"y":260},"properties":{},"pointsList":[{"x":720,"y":320},{"x":780,"y":320},{"x":780,"y":260},{"x":840,"y":260}]},{"id":"5c3a01c0-3811-492d-ba65-2045e60d52ce","type":"polyline","sourceNodeId":"bcc07763-9d31-4c8e-a260-cdb443667215","targetNodeId":"1eda6434-fa6d-40dc-a725-57d44bdadea8","startPoint":{"x":960,"y":260},"endPoint":{"x":1080,"y":160},"properties":{},"pointsList":[{"x":960,"y":260},{"x":1050,"y":260},{"x":1050,"y":160},{"x":1080,"y":160}]},{"id":"ad16b375-8e9b-45f6-b3d7-e45ba8a1a919","type":"polyline","sourceNodeId":"0e5feb52-da0d-4121-a3fd-4ef72281280c","targetNodeId":"1eda6434-fa6d-40dc-a725-57d44bdadea8","startPoint":{"x":960,"y":380},"endPoint":{"x":1080,"y":160},"properties":{},"pointsList":[{"x":960,"y":380},{"x":1050,"y":380},{"x":1050,"y":160},{"x":1080,"y":160}]}]}
 
 const getData = ()=>{
-   
     console.log(JSON.stringify( lf.value?.getGraphRawData()))
-
 }
 
 const openLoadDataInput = ()=>{
@@ -92,11 +96,8 @@ const closeLoadDataInput = ()=>{
 }
 
 const loadData = () =>{
-
-    console.log(loadedData.value)
     let a = JSON.parse(loadedData.value)
     console.log(a)
-    
     lf.value?.render(a)
 }
 
@@ -113,7 +114,7 @@ onMounted(() => {
     lf.value.register(CommonNode)
     lf.value.register(LockedNode)
     lf.value.register(SwitchNode)
-
+    lf.value.register(IfNode)
     lf.value.register(WhenGroupNode)
 
 
