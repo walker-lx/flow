@@ -1,4 +1,5 @@
 import { RectNode, RectNodeModel,h } from "@logicflow/core";
+import { IdUtil } from "@/ts/IdUtil";
 
 class CommonNodeModel extends RectNodeModel {
 
@@ -9,7 +10,7 @@ class CommonNodeModel extends RectNodeModel {
     this.radius = 10;
     this.setProperties({
       nodeType: 'COMMON',
-      nodeId: 'id'
+      nodeId: IdUtil.makeString()
     });
   }
 

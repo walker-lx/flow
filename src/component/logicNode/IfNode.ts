@@ -1,4 +1,5 @@
 import { DiamondNode, DiamondNodeModel,h } from "@logicflow/core";
+import { IdUtil } from "@/ts/IdUtil";
 
 class IfNodeModel extends DiamondNodeModel {
 
@@ -6,7 +7,7 @@ class IfNodeModel extends DiamondNodeModel {
     super.initNodeData(data);
     this.setProperties({
       nodeType: 'IF',
-      conditionNodeId:'cid'
+      conditionNodeId: IdUtil.makeString()
     });
   }
 
@@ -15,6 +16,7 @@ class IfNodeModel extends DiamondNodeModel {
   	style.stroke = 'blue';
   	return style;
 	}
+
 
 }
 

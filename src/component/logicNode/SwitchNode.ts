@@ -1,12 +1,12 @@
 import { DiamondNode, DiamondNodeModel,h } from "@logicflow/core";
-
+import { IdUtil } from "@/ts/IdUtil";
 class SwitchNodeModel extends DiamondNodeModel {
 
   initNodeData(data: any): void {
     super.initNodeData(data);
     this.setProperties({
       nodeType: 'SWITCH',
-      conditionNodeId:'cid'
+      conditionNodeId: IdUtil.makeString()
     });
   }
 
