@@ -8,8 +8,9 @@
 ![elimg](doc/el.png)
 
 ## 对接步骤 
-1. 先把上面前端跑起来，然后配置好流程之后，获取logicFlow的json数据
-2. 后端接收后，调用generateEl()方法就可以解析出EL表达式
+1. 先把上面前端跑起来，然后配置好流程之后，点击页面上的左上角“获取数据”的按钮，会在浏览器的Console打印了json, 获取这个logicFlow的json数据后
+2. 运行后端代码 [liteflow-vue-api](https://gitee.com/dravin/liteflow-vue-api) 后，把刚刚的json请求接口：/api/generateLogicFlowEL 就可以解析出EL表达式
+
 
 后端代码地址：https://gitee.com/dravin/liteflow-vue-api
 
