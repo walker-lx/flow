@@ -1,32 +1,28 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# This. workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node.js CI
-
+name: GitHub Actions Build and Deploy Demo
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
+    branches:
+      - master
 jobs:
-  build:
-
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - name: Checkout
       uses: actions/checkout@master
-
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+    - name: Install and Build
+      run: |
+          npm ci
+          npm run build
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: dist
-        BUILD_SCRIPT: npm install && npm run build
+        folder: dist
+        # clean: true
+        # force: true
+      # env:
+      #   folder: dist
