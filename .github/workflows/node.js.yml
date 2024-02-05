@@ -17,12 +17,12 @@ jobs:
           npm ci
           npm run build
 
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@v4
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        # token: ${{ secrets.ACCESS_TOKEN }}
-        branch: gh-pages
-        clean: true
-        force: true
-      env:
-        folder: dist
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        # clean: true
+        # force: true
+      # env:
+      #   folder: dist
