@@ -21,14 +21,14 @@ class LockedNodeModel extends CircleNodeModel {
         className: "lf-menu-delete custom-menu",
         text: "删除",
         icon: true,
-        callback: (node) => {
+        callback: (node: any) => {
           this.graphModel.deleteNode(node.id);
         }
       },
       {
         text: 'copy',
         className: 'lf-menu-item',
-        callback: (node) => {
+        callback: (node: any) => {
           this.graphModel.cloneNode(node.id);
         },
       },
