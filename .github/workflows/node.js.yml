@@ -20,7 +20,7 @@ jobs:
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@v4
       env:
-        ssh_key: ${{ secrets.ACCESS_TOKEN }}
+        token: ${{ secrets.ACCESS_TOKEN }}
         # BRANCH: gh-pages
-        folder: dist
+        folder: build
         # BUILD_SCRIPT: npm install && npm run build
