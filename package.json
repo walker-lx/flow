@@ -1,7 +1,6 @@
 {
   "name": "liteflow-logiflow-vue",
   "version": "0.0.0",
-  "private": true,
   "type": "module",
   "homepage": "https://walker-lx.github.io",
   "scripts": {
